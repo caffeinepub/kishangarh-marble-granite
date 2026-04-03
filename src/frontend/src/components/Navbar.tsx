@@ -4,6 +4,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { QuoteFormModal } from "./QuoteFormModal";
 
+const NEW_LOGO =
+  "/assets/whatsapp_image_2026-03-27_at_11.07.47_pm-019d5210-5819-74a6-82a2-5e1432458363.jpeg";
+
 const navLinks = [
   { label: "HOME", to: "/" },
   { label: "MARBLE", to: "/marble" },
@@ -44,12 +47,13 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3" data-ocid="nav.link">
             <img
-              src="/assets/uploads/whatsapp_image_2026-03-24_at_8.48.13_pm-019d2092-57cc-727d-9af5-db793fc14e44-1.jpeg"
+              src={NEW_LOGO}
               alt="Khushi Marble and Granite Logo"
-              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+              className="h-12 w-12 object-contain flex-shrink-0"
             />
-            <span className="font-serif text-base font-semibold tracking-widest uppercase text-white hidden md:block">
-              Khushi Marble and Granite
+            <span className="hidden sm:block font-serif text-gold text-sm font-bold tracking-wider uppercase leading-tight">
+              Khushi Marble
+              <br />& Granite
             </span>
           </Link>
 

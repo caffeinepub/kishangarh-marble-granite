@@ -1,48 +1,28 @@
-# Khushi Marble and Granite
+# Kishangarh Marble & Granite
 
 ## Current State
-
-The website is a full-featured premium marble & granite business site with:
-- Navbar, animated hero (uploaded image background), stats bar, collections, showroom gallery, YouTube section, featured projects, why us section, contact snippet, footer
-- Advanced animations: floating particles, shimmer text, staggered word reveals, animated counters, marble-gold dividers, 3D card tilt (via Framer Motion), spring hovers, glowing CTA buttons
-- Featured Projects section shows 5 project cards with static product images
-- No animated logo intro/splash screen
-- Hero uses an uploaded showroom photo as background
+The site uses a cream/black/gold theme. The Navbar, Footer, and LogoSplash all reference `/assets/generated/kmg-logo-new.dim_400x400.png`. Text color issues persist: some text that appears on light cream/beige backgrounds is rendering with insufficient contrast (appears too faint/invisible). The `--muted-foreground` CSS variable is `0.45 0.01 60` (mid-grey), and some sections may still inadvertently use `text-white` on light backgrounds.
 
 ## Requested Changes (Diff)
 
 ### Add
-1. **Animated Logo Splash Screen**: A full-screen intro that plays when the website first opens. Shows the KM logo animating in (scale + fade + glow), brand name appearing letter by letter or word by word, gold shimmer line, then the whole splash fades out revealing the main site. Stores a sessionStorage flag so it only plays once per session.
-2. **Italian Marble Hero Background**: Replace the current hero background image with the generated Italian Carrara marble texture at `/assets/generated/italian-marble-bg.dim_1920x1080.jpg`.
-3. **Hyperlapse Gallery in Featured Projects**: Replace the 5 static stone images in the Featured Projects section with 6 cinematic hyperlapse-style images showing marble/granite applications at home and office:
-   - `/assets/generated/hyperlapse-home-living.dim_800x600.jpg` — Living Room Flooring
-   - `/assets/generated/hyperlapse-kitchen-granite.dim_800x600.jpg` — Kitchen Countertop
-   - `/assets/generated/hyperlapse-office-lobby.dim_800x600.jpg` — Office Lobby
-   - `/assets/generated/hyperlapse-bathroom-marble.dim_800x600.jpg` — Luxury Bathroom
-   - `/assets/generated/hyperlapse-exterior-granite.dim_800x600.jpg` — Exterior Facade
-   - `/assets/generated/hyperlapse-staircase.dim_800x600.jpg` — Grand Staircase
-4. **Bold Eye-Catching Animations**:
-   - Parallax scroll effect on the hero image (moves slower than scroll)
-   - Kinetic text effect on section headings (characters animate in one by one)
-   - Magnetic hover on CTA buttons (button subtly follows cursor)
-   - Ripple/wave reveal on the Featured Projects section images
-   - Add a bold "HYPERLAPSE SHOWCASE" label/badge on each project card
-   - Glowing gold border pulse on hovered project cards
+- Nothing new to add.
 
 ### Modify
-- `src/frontend/src/App.tsx`: Wrap app with splash screen logic — show `LogoSplash` component before routing if session is fresh
-- `src/frontend/src/pages/Home.tsx`: Update hero background, update featuredProjects array, enhance animations
+1. **Logo**: Replace the logo path `/assets/generated/kmg-logo-new.dim_400x400.png` in Navbar.tsx, Footer.tsx, and LogoSplash.tsx with the user-uploaded image path: `/assets/whatsapp_image_2026-03-27_at_11.07.47_pm-019d5210-5819-74a6-82a2-5e1432458363.jpeg`
+2. **Text color fix**: Ensure ALL text on light backgrounds (bg-background, bg-beige, bg-card, bg-white sections) uses proper dark colors:
+   - All body/description text: `text-foreground` (0.15 0.01 60 - near black) or `text-muted-foreground` (must be darkened to at least 0.35 lightness)
+   - Increase `--muted-foreground` in index.css from `0.45 0.01 60` to `0.30 0.01 60` for better readability
+   - Scan all pages (Home.tsx, About.tsx, Contact.tsx, Marble.tsx, Granite.tsx, Exotic.tsx, ProductDetail.tsx) for any `text-white` or `text-white/XX` that appear on non-dark-background sections and change them to `text-foreground` or `text-gold`
+3. **About page values section**: `text-muted-foreground` on `bg-background` - ensure readable
+4. **Contact page**: Check all text colors on `bg-background` and `bg-beige` sections
 
 ### Remove
-- Nothing removed
+- Nothing to remove.
 
 ## Implementation Plan
-
-1. Create `src/frontend/src/components/LogoSplash.tsx` — animated full-screen splash component using Framer Motion. Logo scales + glows in, text animates, gold shimmer line sweeps, then entire screen fades/slides up. Uses `sessionStorage` to skip on revisit.
-2. Modify `src/frontend/src/App.tsx` — import and render `LogoSplash` with `AnimatePresence` above the router so it overlays the page on first load.
-3. Modify `src/frontend/src/pages/Home.tsx`:
-   a. Change `HERO_IMAGE` to `/assets/generated/italian-marble-bg.dim_1920x1080.jpg`
-   b. Replace `featuredProjects` array with hyperlapse images and new titles/locations
-   c. Add parallax scroll effect on hero using `useScroll` + `useTransform` from Framer Motion
-   d. Enhance Featured Projects cards: add badge, glowing border, ripple reveal animation
-4. Validate and build
+1. Update the `NEW_LOGO` constant in Navbar.tsx and Footer.tsx to point to the uploaded image path
+2. Update `LOGO_SRC` in LogoSplash.tsx to point to the uploaded image path
+3. In index.css, darken `--muted-foreground` from `0.45 0.01 60` to `0.28 0.012 60` so descriptive text is always clearly readable on ivory/cream/beige backgrounds
+4. Scan all page files and fix any `text-white` usage that is NOT inside a dark-background section (bg-dark, inline dark gradient overlay, etc.)
+5. Validate build

@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const LOGO_SRC =
-  "/assets/uploads/whatsapp_image_2026-03-24_at_8.48.13_pm-019d2092-57cc-727d-9af5-db793fc14e44-1.jpeg";
+  "/assets/whatsapp_image_2026-03-27_at_11.07.47_pm-019d5210-5819-74a6-82a2-5e1432458363.jpeg";
 
 const MARBLE_BG = "/assets/generated/italian-marble-bg.dim_1920x1080.jpg";
 
@@ -90,8 +90,8 @@ export function LogoSplash() {
               <img
                 src={LOGO_SRC}
                 alt="Khushi Marble and Granite Logo"
-                className="rounded-full object-cover"
-                style={{ height: "120px", width: "120px" }}
+                className="object-contain"
+                style={{ height: "100px", width: "100px" }}
               />
             </motion.div>
 

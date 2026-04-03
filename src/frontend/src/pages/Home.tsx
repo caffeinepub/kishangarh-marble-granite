@@ -1,12 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  Award,
-  ChevronRight,
-  Gem,
-  PlayCircle,
-  Truck,
-  Users,
-} from "lucide-react";
+import { Award, Gem, PlayCircle, Truck, Users } from "lucide-react";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { AnimatedCounter } from "../components/AnimatedCounter";
@@ -84,37 +77,6 @@ const stats = [
   { value: "Pan India", label: "Delivery" },
 ];
 
-const collections = [
-  {
-    title: "Marble",
-    subtitle: "Indian & Imported",
-    desc: "Pure luxury from Makrana to Statuario — the world's finest white, green, and black marbles.",
-    to: "/marble",
-    image: "/assets/generated/marble-makrana.dim_800x600.jpg",
-  },
-  {
-    title: "Granite",
-    subtitle: "Premium Indian Granites",
-    desc: "Enduring beauty for kitchen countertops, facades, and flooring in Kashmir Gold, Black Galaxy, and more.",
-    to: "/granite",
-    image: "/assets/generated/granite-kashmir-gold.dim_800x600.jpg",
-  },
-  {
-    title: "Exotic Stones",
-    subtitle: "Rare & Imported",
-    desc: "Ultra-rare Blue Bahia and luminous Honey Onyx for the world's most prestigious interiors.",
-    to: "/exotic",
-    image: "/assets/generated/exotic-blue-bahia.dim_800x600.jpg",
-  },
-  {
-    title: "Custom Orders",
-    subtitle: "Bespoke Solutions",
-    desc: "Custom cuts, finishes, pebbles, gravel, and marble chips for architects, contractors, and premium projects.",
-    to: "/contact",
-    image: "/assets/generated/marble-statuario.dim_800x600.jpg",
-  },
-];
-
 const whyUs = [
   {
     icon: <Award className="w-8 h-8 text-gold" />,
@@ -187,6 +149,40 @@ const kineticLetters = Array.from(KINETIC_TITLE).map((char, i) => ({
   delay: i * 0.03,
 }));
 
+const customOrderItems = [
+  {
+    image: "/assets/generated/gravel-custom-order.dim_600x400.jpg",
+    label: "Natural Gravel",
+    desc: "Rounded river gravel in bulk, ideal for drainage, landscaping, and pathway designs.",
+  },
+  {
+    image: "/assets/generated/cobble-custom-order.dim_600x400.jpg",
+    label: "Cobblestone",
+    desc: "Premium granite cobblestones for driveways, pathways, and heritage exterior paving.",
+  },
+  {
+    image: "/assets/generated/marble-chip-custom-order.dim_600x400.jpg",
+    label: "Marble Chips",
+    desc: "White marble chips in assorted grades for garden paths, pool surrounds, and decorative fills.",
+  },
+];
+
+// Gold marble divider between collection sections
+function GoldDivider() {
+  return (
+    <div className="max-w-[1200px] mx-auto px-4">
+      <motion.div
+        className="marble-divider"
+        style={{ transformOrigin: "left center" }}
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </div>
+  );
+}
+
 function SectionHeading({
   eyebrow,
   title,
@@ -203,11 +199,7 @@ function SectionHeading({
       viewport={{ once: true }}
       className="text-center mb-10 md:mb-14"
     >
-      <p
-        className={`font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 ${
-          light ? "text-gold" : "text-gold"
-        }`}
-      >
+      <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
         {eyebrow}
       </p>
       <h2
@@ -359,69 +351,336 @@ export function Home() {
         </div>
       </section>
 
-      {/* Collections */}
-      <section className="py-12 md:py-20 bg-background">
+      {/* ===== COLLECTIONS SHOWCASE ===== */}
+      <section className="bg-background">
+        <div className="max-w-[1200px] mx-auto px-4 pt-14 md:pt-20 pb-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold"
+          >
+            What We Offer
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-serif text-3xl md:text-4xl font-bold uppercase tracking-wide text-foreground"
+          >
+            Our Exquisite Collections
+          </motion.h2>
+          <div className="flex justify-center mt-3 mb-2">
+            <motion.div
+              className="marble-divider w-24"
+              style={{ transformOrigin: "left center" }}
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* --- MARBLE Sub-section --- */}
+      <section
+        data-ocid="collections.marble"
+        className="py-16 md:py-24 bg-background"
+      >
         <div className="max-w-[1200px] mx-auto px-4">
-          <SectionHeading
-            eyebrow="What We Offer"
-            title="Our Exquisite Collections"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {collections.map((col, i) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Image — left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden rounded-sm shadow-stone"
+            >
+              <img
+                src="/assets/generated/marble-slab-hero.dim_900x600.jpg"
+                alt="Premium Marble Slab"
+                className="w-full h-72 md:h-96 lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </motion.div>
+            {/* Text — right */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+            >
+              <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
+                OUR MARBLE COLLECTION
+              </p>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+                Timeless Marble
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+                From pure white Makrana to luxurious Statuario and Green Onyx —
+                our marble collection spans 26+ varieties sourced from India's
+                finest quarries. Perfect for flooring, wall cladding,
+                countertops, and statement pieces. MOQ: 2000 sqft for pan-India
+                delivery.
+              </p>
               <motion.div
-                key={col.title}
-                initial={{ opacity: 0, y: 32 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  to="/marble"
+                  data-ocid="collections.marble.button"
+                  className="btn-gold-glow inline-block px-7 py-3.5 bg-gold text-black font-black text-xs tracking-widest uppercase shadow-md hover:brightness-110 hover:shadow-lg transition-all duration-200 border-2 border-gold"
+                >
+                  EXPLORE MARBLE →
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* --- GRANITE Sub-section --- */}
+      <section
+        data-ocid="collections.granite"
+        className="py-16 md:py-24 bg-beige"
+      >
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text — left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className="order-2 lg:order-1"
+            >
+              <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
+                OUR GRANITE COLLECTION
+              </p>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+                Enduring Granite
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+                Black Galaxy, Kashmir Gold, Red Multicolor — 24+ premium
+                granites ideal for kitchen counters, exterior facades, flooring,
+                and stairs. Unmatched hardness with natural beauty that lasts
+                generations.
+              </p>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  to="/granite"
+                  data-ocid="collections.granite.button"
+                  className="btn-gold-glow inline-block px-7 py-3.5 bg-gold text-black font-black text-xs tracking-widest uppercase shadow-md hover:brightness-110 hover:shadow-lg transition-all duration-200 border-2 border-gold"
+                >
+                  EXPLORE GRANITE →
+                </Link>
+              </motion.div>
+            </motion.div>
+            {/* Image — right */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+              className="overflow-hidden rounded-sm shadow-stone order-1 lg:order-2"
+            >
+              <img
+                src="/assets/generated/granite-slab-hero.dim_900x600.jpg"
+                alt="Premium Granite Slab"
+                className="w-full h-72 md:h-96 lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* --- EXOTIC STONE Sub-section --- */}
+      <section
+        data-ocid="collections.exotic"
+        className="py-16 md:py-24 bg-background"
+      >
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Image — left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden rounded-sm shadow-stone"
+            >
+              <img
+                src="/assets/generated/exotic-stone-slab-hero.dim_900x600.jpg"
+                alt="Exotic Stone Slab"
+                className="w-full h-72 md:h-96 lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </motion.div>
+            {/* Text — right */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.1,
+              }}
+            >
+              <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
+                EXOTIC &amp; RARE STONES
+              </p>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+                Extraordinary Exotic Stones
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+                Blue Bahia, Honey Onyx, Labradorite, and 12 more ultra-rare
+                stones for the world's most prestigious interiors. Each slab is
+                a unique work of art — sourced globally and curated for
+                discerning architects and designers.
+              </p>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  to="/exotic"
+                  data-ocid="collections.exotic.button"
+                  className="btn-gold-glow inline-block px-7 py-3.5 bg-gold text-black font-black text-xs tracking-widest uppercase shadow-md hover:brightness-110 hover:shadow-lg transition-all duration-200 border-2 border-gold"
+                >
+                  EXPLORE EXOTIC →
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* --- CUSTOM ORDER Sub-section --- */}
+      <section
+        data-ocid="collections.custom"
+        className="py-16 md:py-24 bg-beige"
+      >
+        <div className="max-w-[1200px] mx-auto px-4">
+          {/* Heading */}
+          <div className="text-center mb-10 md:mb-14">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold"
+            >
+              CUSTOM ORDERS
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-serif text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide mb-2"
+            >
+              Bespoke Stone Solutions
+            </motion.h3>
+            <div className="flex justify-center mt-3">
+              <motion.div
+                className="marble-divider w-24"
+                style={{ transformOrigin: "left center" }}
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </div>
+          </div>
+
+          {/* 3-card row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 mb-10">
+            {customOrderItems.map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{
-                  y: -8,
-                  transition: { type: "spring", stiffness: 300, damping: 20 },
-                }}
                 viewport={{ once: true }}
                 transition={{
                   type: "spring",
                   stiffness: 80,
                   damping: 18,
-                  delay: i * 0.1,
+                  delay: i * 0.12,
                 }}
-                data-ocid={`collections.item.${i + 1}`}
-                className="group overflow-hidden rounded-sm shadow-stone hover:shadow-xl transition-shadow"
+                className="group overflow-hidden rounded-sm shadow-stone"
               >
-                <div className="relative overflow-hidden h-48 sm:h-52">
+                {/* Image with overlay label */}
+                <div className="relative overflow-hidden h-52 md:h-60">
                   <img
-                    src={col.image}
-                    alt={col.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src={item.image}
+                    alt={item.label}
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-600"
+                    style={{ transition: "transform 0.6s ease" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-4">
-                    <p className="text-gold font-sans text-xs tracking-widest uppercase">
-                      {col.subtitle}
-                    </p>
-                    <h3 className="text-white font-serif text-xl font-bold">
-                      {col.title}
-                    </h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 className="text-gold font-serif text-xl font-bold tracking-wide">
+                      {item.label}
+                    </h4>
                   </div>
                 </div>
+                {/* Card body */}
                 <div className="bg-card p-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    {col.desc}
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.desc}
                   </p>
-                  <Link
-                    to={col.to}
-                    data-ocid={`collections.link.${i + 1}`}
-                    className="inline-flex items-center gap-1 text-gold font-sans text-xs font-bold tracking-widest uppercase hover:gap-2 transition-all"
-                  >
-                    VIEW GALLERY <ChevronRight className="w-4 h-4" />
-                  </Link>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Description + CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <p className="text-muted-foreground text-base leading-relaxed mb-7">
+              Custom cuts, pebbles, gravel, cobblestone, and marble chips for
+              architects, landscapers, and premium construction projects.
+              Available in bulk orders with custom sizing.
+            </p>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                to="/contact"
+                data-ocid="collections.custom.button"
+                className="btn-gold-glow inline-block px-8 py-4 bg-gold text-black font-black text-xs tracking-widest uppercase shadow-lg hover:brightness-110 hover:shadow-xl transition-all duration-200 border-2 border-gold ring-2 ring-offset-1 ring-gold"
+              >
+                PLACE CUSTOM ORDER →
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Showroom Gallery Strip */}
-      <section className="bg-beige py-8 md:py-12">
+      <section className="bg-background py-8 md:py-12">
         <div className="max-w-[1200px] mx-auto px-4 mb-6">
           <SectionHeading
             eyebrow="Our Showroom"
@@ -514,6 +773,7 @@ export function Home() {
                 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
+                data-ocid={`youtube.item.${i + 1}`}
                 className="group block rounded-sm overflow-hidden"
               >
                 <div className="relative overflow-hidden">
@@ -522,77 +782,69 @@ export function Home() {
                     alt={video.title}
                     className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <motion.div
-                      animate={{ scale: [1, 1.15, 1] }}
+                      animate={{ scale: [1, 1.12, 1] }}
                       transition={{
-                        duration: 1.6,
                         repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
+                        duration: 1.4,
                       }}
                     >
-                      <PlayCircle className="w-10 h-10 text-white" />
+                      <PlayCircle className="w-10 h-10 text-white drop-shadow-lg" />
                     </motion.div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 </div>
-                <div className="bg-[#1a1a1a] p-2">
-                  <p className="text-white/80 text-xs leading-snug line-clamp-2 font-sans">
+                <div className="bg-card p-2">
+                  <p className="text-foreground text-xs leading-snug line-clamp-2">
                     {video.title}
                   </p>
                 </div>
               </motion.a>
             ))}
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
+          <div className="flex justify-center mt-8">
             <a
-              href="https://www.youtube.com/@khushimarbles7384"
+              href="https://www.youtube.com/@khushimarbles7384?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#FF0000] text-white font-bold text-xs tracking-widest uppercase shadow-lg hover:brightness-110 transition-all duration-200"
+              data-ocid="youtube.primary_button"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-[#FF0000] text-white font-black text-xs tracking-widest uppercase shadow-md hover:bg-[#cc0000] transition-colors"
             >
               <svg
-                className="w-5 h-5"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-label="YouTube"
-                role="img"
+                className="w-5 h-5 fill-current"
+                aria-hidden="true"
               >
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
               </svg>
-              SUBSCRIBE TO OUR CHANNEL
+              SUBSCRIBE ON YOUTUBE
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Featured Projects — Hyperlapse Showcase */}
-      <section className="py-12 md:py-20 bg-background">
+      {/* Featured Projects (Hyperlapse) */}
+      <section className="py-12 md:py-20 bg-dark">
         <div className="max-w-[1200px] mx-auto px-4">
-          {/* Kinetic letter-by-letter heading */}
           <div className="text-center mb-10 md:mb-14">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold"
+              className="text-gold font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3"
             >
-              HYPERLAPSE SHOWCASE
+              Real Projects
             </motion.p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold uppercase tracking-wide text-foreground flex flex-wrap justify-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white uppercase tracking-wide flex flex-wrap justify-center">
               {kineticLetters.map((item) => (
                 <motion.span
                   key={item.key}
+                  className="inline-block"
                   style={{
                     display: "inline-block",
-                    minWidth: item.char === " " ? "0.3em" : undefined,
+                    minWidth: item.char === " " ? "0.35em" : undefined,
                   }}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{

@@ -3,6 +3,9 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import { SiFacebook, SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 
+const NEW_LOGO =
+  "/assets/whatsapp_image_2026-03-27_at_11.07.47_pm-019d5210-5819-74a6-82a2-5e1432458363.jpeg";
+
 const socialLinks = [
   {
     href: "https://www.instagram.com/khushi_marbles",
@@ -38,12 +41,13 @@ export function Footer() {
         <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3 mb-4">
             <img
-              src="/assets/uploads/whatsapp_image_2026-03-24_at_8.48.13_pm-019d2092-57cc-727d-9af5-db793fc14e44-1.jpeg"
+              src={NEW_LOGO}
               alt="Khushi Marble and Granite Logo"
-              className="w-12 h-12 rounded-full object-cover"
+              className="h-14 w-14 object-contain"
             />
-            <span className="font-serif text-sm font-semibold tracking-wider uppercase text-white">
-              Khushi Marble and Granite
+            <span className="font-serif text-gold text-sm font-bold tracking-wider uppercase leading-tight">
+              Khushi Marble
+              <br />& Granite
             </span>
           </div>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
@@ -167,17 +171,26 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1200px] mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/40 text-xs">
           <span>© {year} Khushi Marble and Granite. All rights reserved.</span>
-          <span>
-            Built with ❤️ using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gold transition-colors"
+          <div className="flex items-center gap-4">
+            <Link
+              to="/logos"
+              className="hover:text-gold transition-colors underline underline-offset-2"
+              data-ocid="footer.link"
             >
-              caffeine.ai
-            </a>
-          </span>
+              Change Logo →
+            </Link>
+            <span>
+              Built with ❤️ using{" "}
+              <a
+                href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                caffeine.ai
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>

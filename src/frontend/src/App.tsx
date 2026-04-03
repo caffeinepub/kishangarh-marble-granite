@@ -17,6 +17,7 @@ import { Contact } from "./pages/Contact";
 import { Exotic } from "./pages/Exotic";
 import { Granite } from "./pages/Granite";
 import { Home } from "./pages/Home";
+import { LogoPicker } from "./pages/LogoPicker";
 import { Marble } from "./pages/Marble";
 import { ProductDetail } from "./pages/ProductDetail";
 
@@ -99,6 +100,11 @@ const productDetailRoute = createRoute({
   path: "/product/$slug",
   component: ProductDetail,
 });
+const logosRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/logos",
+  component: LogoPicker,
+});
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
@@ -108,6 +114,7 @@ const routeTree = rootRoute.addChildren([
   aboutRoute,
   contactRoute,
   productDetailRoute,
+  logosRoute,
 ]);
 
 const router = createRouter({ routeTree });
