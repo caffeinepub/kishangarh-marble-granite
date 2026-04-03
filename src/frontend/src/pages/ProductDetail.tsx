@@ -83,10 +83,10 @@ export function ProductDetail() {
     return (
       <main className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center" data-ocid="product.error_state">
-          <h1 className="font-serif text-3xl text-foreground mb-4">
+          <h1 className="font-serif text-3xl text-[#1a1a1a] mb-4">
             Product Not Found
           </h1>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-[#5a5a5a] mb-6">
             The product you are looking for does not exist.
           </p>
           <a href="/marble" className="text-gold underline hover:opacity-80">
@@ -104,7 +104,7 @@ export function ProductDetail() {
 
   return (
     <main className="bg-background min-h-screen">
-      {/* Hero */}
+      {/* Hero — dark gradient overlay on stone image */}
       <section
         className="relative h-96 flex items-end"
         style={{
@@ -144,8 +144,8 @@ export function ProductDetail() {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-16">
+      {/* Content — light bg */}
+      <section className="py-16 bg-background">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* LEFT: Images + Description */}
@@ -192,17 +192,17 @@ export function ProductDetail() {
 
               {/* Full Description */}
               <div>
-                <h2 className="font-serif text-2xl text-foreground font-semibold mb-4">
+                <h2 className="font-serif text-2xl text-[#1a1a1a] font-semibold mb-4">
                   About This Stone
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-base">
+                <p className="text-[#5a5a5a] leading-relaxed text-base">
                   {product.fullDescription}
                 </p>
               </div>
 
               {/* Finishes */}
               <div>
-                <h3 className="font-serif text-lg text-foreground font-semibold mb-3">
+                <h3 className="font-serif text-lg text-[#1a1a1a] font-semibold mb-3">
                   Available Finishes
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -228,38 +228,38 @@ export function ProductDetail() {
             >
               {/* Product Info Card */}
               <div
-                className="rounded-lg border border-gold/30 bg-card p-6 space-y-4"
+                className="rounded-lg border border-gold/30 bg-white p-6 space-y-4"
                 data-ocid="product.card"
               >
-                <h3 className="font-serif text-lg font-semibold text-foreground border-b border-gold/20 pb-3">
+                <h3 className="font-serif text-lg font-semibold text-[#1a1a1a] border-b border-gold/20 pb-3">
                   Product Information
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">MOQ</span>
-                    <span className="text-foreground font-medium">
+                    <span className="text-[#5a5a5a]">MOQ</span>
+                    <span className="text-[#1a1a1a] font-medium">
                       2000 sqft (outside Rajasthan)
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Available At</span>
-                    <span className="text-foreground font-medium">
+                    <span className="text-[#5a5a5a]">Available At</span>
+                    <span className="text-[#1a1a1a] font-medium">
                       Khushi Marble, Kishangarh
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Contact</span>
+                    <span className="text-[#5a5a5a]">Contact</span>
                     <span className="text-gold font-semibold">9829184713</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Category</span>
-                    <span className="text-foreground font-medium capitalize">
+                    <span className="text-[#5a5a5a]">Category</span>
+                    <span className="text-[#1a1a1a] font-medium capitalize">
                       {product.category}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Origin</span>
-                    <span className="text-foreground font-medium">
+                    <span className="text-[#5a5a5a]">Origin</span>
+                    <span className="text-[#1a1a1a] font-medium">
                       {product.origin}
                     </span>
                   </div>
@@ -268,17 +268,17 @@ export function ProductDetail() {
 
               {/* Applications */}
               <div
-                className="rounded-lg border border-border bg-card p-6"
+                className="rounded-lg border border-border bg-white p-6"
                 data-ocid="product.panel"
               >
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-4">
+                <h3 className="font-serif text-lg font-semibold text-[#1a1a1a] mb-4">
                   Applications
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
                   {product.applications.map((app) => (
                     <div
                       key={app}
-                      className="flex items-center gap-2 bg-muted/30 rounded-md px-3 py-2 text-sm text-foreground"
+                      className="flex items-center gap-2 bg-beige rounded-md px-3 py-2 text-sm text-[#1a1a1a]"
                     >
                       <span className="text-gold flex-shrink-0">
                         {getAppIcon(app)}

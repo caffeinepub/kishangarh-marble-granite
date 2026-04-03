@@ -77,7 +77,7 @@ export function ProductCard({
         }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.07 }}
-        className="bg-card rounded-sm overflow-hidden shadow-stone group hover:shadow-xl transition-shadow duration-300 flex flex-col"
+        className="bg-white rounded-sm overflow-hidden shadow-stone group hover:shadow-xl transition-shadow duration-300 flex flex-col"
       >
         <Link
           to="/product/$slug"
@@ -93,7 +93,7 @@ export function ProductCard({
         </Link>
 
         {allImages.length > 1 && (
-          <div className="flex gap-1.5 px-3 py-2 bg-muted/30 border-b border-border overflow-x-auto">
+          <div className="flex gap-1.5 px-3 py-2 bg-gray-50 border-b border-gray-200 overflow-x-auto">
             {allImages.slice(0, 4).map((img, i) => (
               <motion.button
                 // biome-ignore lint/suspicious/noArrayIndexKey: thumbnail list is static
@@ -118,17 +118,17 @@ export function ProductCard({
           </div>
         )}
 
-        <div className="p-4 sm:p-5 flex flex-col flex-1">
+        <div className="p-4 sm:p-5 flex flex-col flex-1 bg-white">
           <Link to="/product/$slug" params={{ slug }}>
-            <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 hover:text-gold transition-colors leading-tight">
+            <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#1a1a1a] mb-1 hover:text-gold transition-colors leading-tight">
               {name}
             </h3>
           </Link>
-          <p className="flex items-center gap-1 text-muted-foreground text-xs font-sans tracking-wider uppercase mb-3">
+          <p className="flex items-center gap-1 text-[#777] text-xs font-sans tracking-wider uppercase mb-3">
             <MapPin className="w-3 h-3 flex-shrink-0" />
             {origin}
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
+          <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4 flex-1 line-clamp-3">
             {description}
           </p>
           <div className="flex flex-wrap gap-1.5 mb-4">

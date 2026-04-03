@@ -6,7 +6,7 @@ export function About() {
 
   return (
     <main>
-      {/* Header */}
+      {/* Header — dark overlay on marble bg */}
       <section
         className="relative py-24"
         style={{
@@ -34,6 +34,7 @@ export function About() {
         </div>
       </section>
 
+      {/* About content — light bg */}
       <section className="py-20 bg-background">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -45,14 +46,14 @@ export function About() {
               <p className="text-gold font-sans text-xs font-bold tracking-[0.3em] uppercase mb-4">
                 Established 1999
               </p>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-4xl font-bold text-[#1a1a1a] mb-6">
                 The Stone Capital's Finest
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-[#5a5a5a] leading-relaxed">
                 <p>
                   {company?.name ?? "Khushi Marble and Granite"} was founded in
                   1999 by{" "}
-                  <strong className="text-foreground">
+                  <strong className="text-[#1a1a1a]">
                     Mr. Ramsahay Prajapat
                   </strong>{" "}
                   in Kishangarh — the world-renowned stone trading capital of
@@ -104,8 +105,8 @@ export function About() {
         </div>
       </section>
 
-      {/* Founder highlight */}
-      <section className="py-16 bg-dark text-white">
+      {/* Founder highlight — dark bg */}
+      <section className="py-16 bg-dark">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,7 +116,7 @@ export function About() {
             <p className="text-gold font-sans text-xs font-bold tracking-[0.3em] uppercase mb-4">
               Founder
             </p>
-            <h2 className="font-serif text-3xl font-bold mb-3">
+            <h2 className="font-serif text-3xl font-bold text-white mb-3">
               Mr. Ramsahay Prajapat
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
@@ -130,7 +131,7 @@ export function About() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — light bg */}
       <section className="py-20 bg-beige">
         <div className="max-w-[1200px] mx-auto px-6">
           <motion.div
@@ -139,9 +140,15 @@ export function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="font-serif text-4xl font-bold text-foreground uppercase">
+            <h2 className="font-serif text-4xl font-bold text-[#1a1a1a] uppercase">
               Our Values
             </h2>
+            <div className="flex justify-center mt-3">
+              <div
+                className="marble-divider w-24"
+                style={{ transformOrigin: "left center" }}
+              />
+            </div>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -164,14 +171,12 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 bg-background rounded-sm shadow-stone"
+                className="p-8 bg-white rounded-sm shadow-stone"
               >
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
+                <h3 className="font-serif text-2xl font-bold text-[#1a1a1a] mb-4">
                   {v.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {v.body}
-                </p>
+                <p className="text-[#5a5a5a] leading-relaxed">{v.body}</p>
               </motion.div>
             ))}
           </div>

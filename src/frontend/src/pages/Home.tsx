@@ -204,7 +204,7 @@ function SectionHeading({
       </p>
       <h2
         className={`font-serif text-3xl md:text-4xl font-bold uppercase tracking-wide ${
-          light ? "text-white" : "text-foreground"
+          light ? "text-white" : "text-[#1a1a1a]"
         }`}
       >
         {title}
@@ -367,7 +367,7 @@ export function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-serif text-3xl md:text-4xl font-bold uppercase tracking-wide text-foreground"
+            className="font-serif text-3xl md:text-4xl font-bold uppercase tracking-wide text-[#1a1a1a]"
           >
             Our Exquisite Collections
           </motion.h2>
@@ -419,10 +419,10 @@ export function Home() {
               <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
                 OUR MARBLE COLLECTION
               </p>
-              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-5 uppercase tracking-wide">
                 Timeless Marble
               </h3>
-              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+              <p className="text-[#5a5a5a] text-base leading-relaxed mb-7">
                 From pure white Makrana to luxurious Statuario and Green Onyx —
                 our marble collection spans 26+ varieties sourced from India's
                 finest quarries. Perfect for flooring, wall cladding,
@@ -466,10 +466,10 @@ export function Home() {
               <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
                 OUR GRANITE COLLECTION
               </p>
-              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-5 uppercase tracking-wide">
                 Enduring Granite
               </h3>
-              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+              <p className="text-[#5a5a5a] text-base leading-relaxed mb-7">
                 Black Galaxy, Kashmir Gold, Red Multicolor — 24+ premium
                 granites ideal for kitchen counters, exterior facades, flooring,
                 and stairs. Unmatched hardness with natural beauty that lasts
@@ -547,10 +547,10 @@ export function Home() {
               <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3 text-gold">
                 EXOTIC &amp; RARE STONES
               </p>
-              <h3 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 uppercase tracking-wide">
+              <h3 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-5 uppercase tracking-wide">
                 Extraordinary Exotic Stones
               </h3>
-              <p className="text-muted-foreground text-base leading-relaxed mb-7">
+              <p className="text-[#5a5a5a] text-base leading-relaxed mb-7">
                 Blue Bahia, Honey Onyx, Labradorite, and 12 more ultra-rare
                 stones for the world's most prestigious interiors. Each slab is
                 a unique work of art — sourced globally and curated for
@@ -596,7 +596,7 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="font-serif text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide mb-2"
+              className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] uppercase tracking-wide mb-2"
             >
               Bespoke Stone Solutions
             </motion.h3>
@@ -644,8 +644,8 @@ export function Home() {
                   </div>
                 </div>
                 {/* Card body */}
-                <div className="bg-card p-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="bg-white p-4">
+                  <p className="text-[#5a5a5a] text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -661,7 +661,7 @@ export function Home() {
             transition={{ delay: 0.3 }}
             className="text-center max-w-2xl mx-auto"
           >
-            <p className="text-muted-foreground text-base leading-relaxed mb-7">
+            <p className="text-[#5a5a5a] text-base leading-relaxed mb-7">
               Custom cuts, pebbles, gravel, cobblestone, and marble chips for
               architects, landscapers, and premium construction projects.
               Available in bulk orders with custom sizing.
@@ -794,8 +794,8 @@ export function Home() {
                     </motion.div>
                   </div>
                 </div>
-                <div className="bg-card p-2">
-                  <p className="text-foreground text-xs leading-snug line-clamp-2">
+                <div className="bg-[#1a1a1a] p-2">
+                  <p className="text-white text-xs leading-snug line-clamp-2">
                     {video.title}
                   </p>
                 </div>
@@ -932,7 +932,7 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="font-serif text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide"
+              className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] uppercase tracking-wide"
             >
               Why Khushi Marble and Granite
             </motion.h2>
@@ -951,7 +951,7 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto"
+              className="text-[#5a5a5a] text-sm mt-3 max-w-xl mx-auto"
             >
               The #1 destination for marble in Kishangarh and granite in
               Kishangarh — quality you can see and feel.
@@ -975,13 +975,13 @@ export function Home() {
                   damping: 18,
                   delay: i * 0.1,
                 }}
-                className="text-center p-5 md:p-6 border border-border hover:border-gold transition-colors rounded-sm bg-card"
+                className="text-center p-5 md:p-6 border border-border hover:border-gold transition-colors rounded-sm bg-white"
               >
                 <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="font-serif text-lg font-bold text-foreground mb-2">
+                <h3 className="font-serif text-lg font-bold text-[#1a1a1a] mb-2">
                   {item.label}
                 </h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <p className="text-[#5a5a5a] text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -1017,21 +1017,21 @@ export function Home() {
               <p className="text-gold font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3">
                 Visit Us
               </p>
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl font-bold text-[#1a1a1a] mb-4">
                 Come See Our Showroom
               </h2>
-              <p className="text-muted-foreground text-sm mb-5">
+              <p className="text-[#5a5a5a] text-sm mb-5">
                 Our 10,000 sq ft showroom in Kishangarh displays hundreds of
                 slabs in every variety. Walk in and let our stone experts help
                 you find the perfect material for your project.
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+              <ul className="space-y-2 text-sm text-[#5a5a5a] mb-6">
                 <li>
-                  <strong className="text-foreground">Address:</strong> Makrana
+                  <strong className="text-[#1a1a1a]">Address:</strong> Makrana
                   Road, Kishangarh, 305801
                 </li>
                 <li>
-                  <strong className="text-foreground">Phone:</strong>{" "}
+                  <strong className="text-[#1a1a1a]">Phone:</strong>{" "}
                   <a
                     href="tel:+919252991720"
                     className="hover:text-gold transition-colors duration-300"
@@ -1047,7 +1047,7 @@ export function Home() {
                   </a>
                 </li>
                 <li>
-                  <strong className="text-foreground">Email:</strong>{" "}
+                  <strong className="text-[#1a1a1a]">Email:</strong>{" "}
                   <a
                     href="mailto:khushimarblesksg@gmail.com"
                     className="hover:text-gold transition-colors duration-300"

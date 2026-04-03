@@ -83,7 +83,7 @@ const customOrders = [
 export function Contact() {
   return (
     <main>
-      {/* Header */}
+      {/* Header — dark overlay */}
       <section
         className="relative py-16 md:py-24"
         style={{
@@ -119,7 +119,7 @@ export function Contact() {
         </div>
       </section>
 
-      {/* Map + Contact Details */}
+      {/* Map + Contact Details — light bg */}
       <section className="py-12 md:py-20 bg-background">
         <div className="max-w-[1200px] mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -148,7 +148,7 @@ export function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-3xl font-bold text-[#1a1a1a] mb-6">
                 Visit Our Showroom
               </h2>
               <ul className="space-y-4 mb-6">
@@ -157,10 +157,10 @@ export function Contact() {
                     <MapPin className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-foreground text-xs uppercase tracking-wider mb-1">
+                    <p className="font-sans font-semibold text-[#1a1a1a] text-xs uppercase tracking-wider mb-1">
                       Address
                     </p>
-                    <p className="text-muted-foreground text-sm">{ADDRESS}</p>
+                    <p className="text-[#5a5a5a] text-sm">{ADDRESS}</p>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start border-l-2 border-gold/40 pl-4 py-1">
@@ -168,18 +168,18 @@ export function Contact() {
                     <Phone className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-foreground text-xs uppercase tracking-wider mb-1">
+                    <p className="font-sans font-semibold text-[#1a1a1a] text-xs uppercase tracking-wider mb-1">
                       Phone
                     </p>
                     <a
                       href={`tel:${PHONE1_RAW}`}
-                      className="block text-muted-foreground text-sm hover:text-gold transition-colors"
+                      className="block text-[#5a5a5a] text-sm hover:text-gold transition-colors"
                     >
                       {PHONE1}
                     </a>
                     <a
                       href={`tel:${PHONE2_RAW}`}
-                      className="block text-muted-foreground text-sm hover:text-gold transition-colors"
+                      className="block text-[#5a5a5a] text-sm hover:text-gold transition-colors"
                     >
                       {PHONE2}
                     </a>
@@ -190,12 +190,12 @@ export function Contact() {
                     <Mail className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-foreground text-xs uppercase tracking-wider mb-1">
+                    <p className="font-sans font-semibold text-[#1a1a1a] text-xs uppercase tracking-wider mb-1">
                       Email
                     </p>
                     <a
                       href={`mailto:${EMAIL}`}
-                      className="text-muted-foreground text-sm hover:text-gold transition-colors break-all"
+                      className="text-[#5a5a5a] text-sm hover:text-gold transition-colors break-all"
                     >
                       {EMAIL}
                     </a>
@@ -206,15 +206,13 @@ export function Contact() {
                     <Clock className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-foreground text-xs uppercase tracking-wider mb-1">
+                    <p className="font-sans font-semibold text-[#1a1a1a] text-xs uppercase tracking-wider mb-1">
                       Business Hours
                     </p>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-[#5a5a5a] text-sm">
                       Monday – Saturday: 9:00 AM – 6:00 PM
                     </p>
-                    <p className="text-muted-foreground text-sm">
-                      Sunday: Closed
-                    </p>
+                    <p className="text-[#5a5a5a] text-sm">Sunday: Closed</p>
                   </div>
                 </li>
               </ul>
@@ -223,7 +221,7 @@ export function Contact() {
 
               {/* Social Media */}
               <div>
-                <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                <h3 className="font-serif text-xl font-bold text-[#1a1a1a] mb-4">
                   Connect With Us
                 </h3>
                 <div className="flex gap-3 flex-wrap">
@@ -237,7 +235,7 @@ export function Contact() {
                       className="flex flex-col items-center gap-2 p-3 sm:p-4 bg-white border border-gold/30 rounded-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 min-w-[68px]"
                     >
                       {s.icon}
-                      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-muted-foreground">
+                      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-[#5a5a5a]">
                         {s.name}
                       </span>
                     </a>
@@ -249,7 +247,7 @@ export function Contact() {
         </div>
       </section>
 
-      {/* Custom Order Materials */}
+      {/* Custom Order Materials — beige bg */}
       <section className="py-12 md:py-20 bg-beige">
         <div className="max-w-[1200px] mx-auto px-4">
           <motion.div
@@ -259,12 +257,12 @@ export function Contact() {
             className="text-center mb-10"
           >
             <p className="text-gold font-sans text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Bulk & Bespoke Supply
+              Bulk &amp; Bespoke Supply
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a1a] uppercase tracking-wide">
               Custom Order Materials
             </h2>
-            <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
+            <p className="text-[#5a5a5a] text-sm mt-3 max-w-xl mx-auto">
               Beyond marble and granite, we supply a range of specialty
               materials for landscaping, construction, and architectural
               finishing.
@@ -279,15 +277,15 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-card border border-gold/30 rounded-sm p-6 shadow-stone hover:shadow-xl hover:border-gold transition-all duration-300"
+                className="bg-white border border-gold/30 rounded-sm p-6 shadow-stone hover:shadow-xl hover:border-gold transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-sm bg-gold/10 flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+                <h3 className="font-serif text-2xl font-bold text-[#1a1a1a] mb-3">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="text-[#5a5a5a] text-sm leading-relaxed mb-4">
                   {item.description}
                 </p>
                 <div className="mb-5">
@@ -298,7 +296,7 @@ export function Contact() {
                     {item.uses.map((use) => (
                       <span
                         key={use}
-                        className="text-xs px-2 py-1 bg-gold/10 text-foreground rounded-sm border border-gold/20"
+                        className="text-xs px-2 py-1 bg-gold/10 text-[#1a1a1a] rounded-sm border border-gold/20"
                       >
                         {use}
                       </span>
@@ -320,14 +318,14 @@ export function Contact() {
         </div>
       </section>
 
-      {/* Request a Quote card */}
+      {/* Request a Quote card — light bg */}
       <section className="py-12 md:py-16 bg-background">
         <div className="max-w-[1200px] mx-auto px-4">
           <div className="p-6 md:p-8 bg-beige rounded-sm border border-gold/20 max-w-2xl mx-auto text-center">
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3">
               Request a Quote
             </h3>
-            <p className="text-muted-foreground text-sm mb-5">
+            <p className="text-[#5a5a5a] text-sm mb-5">
               Send us details about your project and we'll respond within 24
               hours with pricing and availability.
             </p>
