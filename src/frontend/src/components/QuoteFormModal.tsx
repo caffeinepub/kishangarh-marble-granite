@@ -61,7 +61,7 @@ export function QuoteFormModal({
       `Date/Time: ${datetime}`,
     ].join("\n");
     window.open(
-      `https://wa.me/919829184713?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/917300373111?text=${encodeURIComponent(msg)}`,
       "_blank",
     );
     onClose();

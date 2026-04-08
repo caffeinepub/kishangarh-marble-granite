@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const LOGO_SRC =
   "/assets/whatsapp_image_2026-03-27_at_11.07.47_pm-019d5210-5819-74a6-82a2-5e1432458363.jpeg";
 
-const MARBLE_BG = "/assets/generated/italian-marble-bg.dim_1920x1080.jpg";
+const MARBLE_BG = "/assets/generated/red-dragon-marble-bg.dim_1920x1080.jpg";
 
 type LetterItem = { char: string; key: string; delay: number };
 
@@ -56,7 +56,7 @@ export function LogoSplash() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          {/* Italian marble background */}
+          {/* Red Dragon marble background */}
           <div
             className="absolute inset-0"
             style={{

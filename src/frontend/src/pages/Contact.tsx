@@ -10,12 +10,10 @@ import {
 import { motion } from "motion/react";
 import { SiFacebook, SiInstagram, SiWhatsapp, SiYoutube } from "react-icons/si";
 
-const PHONE1 = "+91 92529 9172";
-const PHONE1_RAW = "+919252991720";
-const PHONE2 = "+91 98291 84713";
-const PHONE2_RAW = "+919829184713";
+const PHONE1 = "+91 73003 73111";
+const PHONE1_RAW = "+917300373111";
 const EMAIL = "khushimarblesksg@gmail.com";
-const ADDRESS = "Makrana Road, Kishangarh, 305801";
+const ADDRESS = "RIICO Industrial Area, Kishangarh, 305801";
 
 const socialLinks = [
   {
@@ -35,7 +33,7 @@ const socialLinks = [
   },
   {
     name: "WhatsApp",
-    url: "https://wa.me/919829184713",
+    url: "https://wa.me/917300373111",
     icon: <SiWhatsapp size={26} color="#25D366" />,
   },
 ];
@@ -177,12 +175,6 @@ export function Contact() {
                     >
                       {PHONE1}
                     </a>
-                    <a
-                      href={`tel:${PHONE2_RAW}`}
-                      className="block text-[#5a5a5a] text-sm hover:text-gold transition-colors"
-                    >
-                      {PHONE2}
-                    </a>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start border-l-2 border-gold/40 pl-4 py-1">
@@ -304,7 +296,7 @@ export function Contact() {
                   </div>
                 </div>
                 <a
-                  href={`https://wa.me/919829184713?text=${encodeURIComponent(item.waText)}`}
+                  href={`https://wa.me/917300373111?text=${encodeURIComponent(item.waText)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-ocid={`contact.${item.title.toLowerCase().replace(" ", "_")}.primary_button`}

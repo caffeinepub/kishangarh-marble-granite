@@ -62,6 +62,7 @@
   h3,
   h4 {
     font-family: "Cormorant Garamond", "Playfair Display", serif;
+    animation: textGlow 3s ease-in-out infinite;
   }
 
   /* Smooth scrolling for the entire page */
@@ -271,4 +272,23 @@ a[role="button"]:active,
   background-size: 200% 200%;
   animation: marbleShimmer 4s ease infinite;
   transform-origin: left center;
+}
+
+/* ─────────────────────────────────────────
+   Text Glow Animation
+───────────────────────────────────────── */
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px oklch(0.72 0.15 74 / 0.4), 0 0 20px
+      oklch(0.72 0.15 74 / 0.2);
+  }
+  50% {
+    text-shadow: 0 0 16px oklch(0.72 0.15 74 / 0.8), 0 0 40px
+      oklch(0.72 0.15 74 / 0.4), 0 0 60px oklch(0.72 0.15 74 / 0.15);
+  }
+}
+
+.glow-text {
+  animation: textGlow 3s ease-in-out infinite;
 }

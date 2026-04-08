@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { AnimatedCounter } from "../components/AnimatedCounter";
 import { ParticleField } from "../components/ParticleField";
 
-const HERO_IMAGE = "/assets/generated/italian-marble-bg.dim_1920x1080.jpg";
+const HERO_IMAGE = "/assets/generated/red-dragon-marble-bg.dim_1920x1080.jpg";
 
 const showroomImages = [
   "/assets/uploads/whatsapp_image_2026-03-24_at_8.42.44_pm_1-019d206a-162c-76ee-bfc6-ac679313b294-1.jpeg",
@@ -314,7 +314,7 @@ export function Home() {
               </Link>
             </motion.div>
             <a
-              href="https://wa.me/919829184713?text=I would like to get a quote"
+              href="https://wa.me/917300373111?text=I would like to get a quote"
               target="_blank"
               rel="noopener noreferrer"
               data-ocid="hero.secondary_button"
@@ -1027,23 +1027,16 @@ export function Home() {
               </p>
               <ul className="space-y-2 text-sm text-[#5a5a5a] mb-6">
                 <li>
-                  <strong className="text-[#1a1a1a]">Address:</strong> Makrana
-                  Road, Kishangarh, 305801
+                  <strong className="text-[#1a1a1a]">Address:</strong> RIICO
+                  Industrial Area, Kishangarh, 305801
                 </li>
                 <li>
                   <strong className="text-[#1a1a1a]">Phone:</strong>{" "}
                   <a
-                    href="tel:+919252991720"
+                    href="tel:+917300373111"
                     className="hover:text-gold transition-colors duration-300"
                   >
-                    +91 92529 9172
-                  </a>
-                  {" / "}
-                  <a
-                    href="tel:+919829184713"
-                    className="hover:text-gold transition-colors duration-300"
-                  >
-                    +91 98291 84713
+                    +91 73003 73111
                   </a>
                 </li>
                 <li>

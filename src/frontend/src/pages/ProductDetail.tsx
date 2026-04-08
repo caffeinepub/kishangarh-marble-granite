@@ -100,7 +100,7 @@ export function ProductDetail() {
   const whatsappText = encodeURIComponent(
     `I'm interested in ${product.name}. Please share the quote.`,
   );
-  const whatsappUrl = `https://wa.me/919829184713?text=${whatsappText}`;
+  const whatsappUrl = `https://wa.me/917300373111?text=${whatsappText}`;
 
   return (
     <main className="bg-background min-h-screen">
@@ -249,7 +249,7 @@ export function ProductDetail() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#5a5a5a]">Contact</span>
-                    <span className="text-gold font-semibold">9829184713</span>
+                    <span className="text-gold font-semibold">7300373111</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#5a5a5a]">Category</span>
@@ -313,9 +313,9 @@ export function ProductDetail() {
                   className="w-full border-gold/50 text-gold hover:bg-gold/10 font-semibold text-base gap-2"
                   data-ocid="product.secondary_button"
                 >
-                  <a href="tel:9829184713">
+                  <a href="tel:7300373111">
                     <Phone className="w-5 h-5" />
-                    Call: 9829184713
+                    Call: 7300373111
                   </a>
                 </Button>
               </div>

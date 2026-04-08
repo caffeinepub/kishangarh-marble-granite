@@ -52,7 +52,7 @@ const rootRoute = createRootRoute({
       <Footer />
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/919829184713"
+        href="https://wa.me/917300373111"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

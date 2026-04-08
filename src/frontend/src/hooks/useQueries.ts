@@ -25,8 +25,8 @@ export function useCompanyInfo() {
           name: "Khushi Marble and Granite",
           email: "khushimarblesksg@gmail.com",
           website: "www.khushimarbles.com",
-          address: "Makrana Road, Kishangarh, 305801",
-          phone: "+91 92529 9172",
+          address: "RIICO Industrial Area, Kishangarh, 305801",
+          phone: "+91 73003 73111",
         };
       }
       return actor.getCompanyInfo();

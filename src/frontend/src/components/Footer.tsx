@@ -23,7 +23,7 @@ const socialLinks = [
     icon: <SiYoutube size={22} />,
   },
   {
-    href: "https://wa.me/919829184713",
+    href: "https://wa.me/917300373111",
     label: "WhatsApp",
     icon: <SiWhatsapp size={22} />,
   },
@@ -130,24 +130,16 @@ export function Footer() {
           <ul className="space-y-3">
             <li className="flex gap-2 items-start text-white/60 text-sm">
               <MapPin className="w-4 h-4 mt-0.5 text-gold flex-shrink-0" />
-              <span>Makrana Road, Kishangarh, 305801</span>
+              <span>RIICO Industrial Area, Kishangarh, 305801</span>
             </li>
             <li className="flex gap-2 items-start text-white/60 text-sm">
               <Phone className="w-4 h-4 mt-0.5 text-gold flex-shrink-0" />
-              <div className="flex flex-col gap-1">
-                <a
-                  href="tel:+919252991720"
-                  className="hover:text-gold transition-colors duration-200"
-                >
-                  +91 92529 9172
-                </a>
-                <a
-                  href="tel:+919829184713"
-                  className="hover:text-gold transition-colors duration-200"
-                >
-                  +91 98291 84713
-                </a>
-              </div>
+              <a
+                href="tel:+917300373111"
+                className="hover:text-gold transition-colors duration-200"
+              >
+                +91 73003 73111
+              </a>
             </li>
             <li className="flex gap-2 items-center text-white/60 text-sm">
               <Mail className="w-4 h-4 text-gold flex-shrink-0" />
